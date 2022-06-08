@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: writ
+      packages: write
     
 
     steps:
@@ -33,7 +33,7 @@ jobs:
       uses: anothrNick/github-tag-action@1.36.0
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DRY_RUN: true
+        DRY_RUN:true
         
     - name: Update Pom Version
       run: mvn versions:set -DnewVersion=${{ steps.bump_version.outputs.new_tag }}
