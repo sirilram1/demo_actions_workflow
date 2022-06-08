@@ -5,7 +5,8 @@ name: Demo java code CI with Maven
 
 on:
   push:
-   - main
+    branches:
+      - main
 
 jobs:
   build:
